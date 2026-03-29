@@ -9,10 +9,107 @@ To implement a logistic regression model to classify food items for diabetic pat
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-1. 
-2. 
-3. 
-4. 
+
+1. **Start**
+
+2. **Import Libraries**
+
+   * Import required libraries:
+
+     * `pandas`, `numpy`
+     * `train_test_split`
+     * `LogisticRegression`
+     * `LabelEncoder`, `MinMaxScaler`
+     * Evaluation metrics (`accuracy`, `precision`, `recall`, `F1-score`, `confusion_matrix`, `classification_report`)
+     * `seaborn`, `matplotlib`
+
+3. **Load Dataset**
+
+   * Read dataset `food_items (1).csv` into a DataFrame
+   * Display:
+
+     * First few rows (`head()`)
+     * Dataset information (`info()`)
+
+4. **Separate Features and Target**
+
+   * Define input features `X_raw` (all columns except last column)
+   * Define target variable `y_raw` (last column)
+
+5. **Feature Scaling**
+
+   * Initialize `MinMaxScaler`
+   * Scale feature values to range [0,1]
+   * Store result in `X`
+
+6. **Encode Target Variable**
+
+   * Initialize `LabelEncoder`
+   * Convert categorical target values into numerical form
+   * Store result in `y`
+
+7. **Split Dataset**
+
+   * Split data into:
+
+     * Training set (80%)
+     * Testing set (20%)
+   * Use `stratify=y` to maintain class distribution
+   * Set `random_state = 123`
+
+---
+
+### **Model Training**
+
+8. **Set Model Parameters**
+
+   * Penalty: `l2`
+   * Multi-class: `multinomial`
+   * Solver: `lbfgs`
+   * Maximum iterations: `1000`
+
+9. **Create Logistic Regression Model**
+
+   * Initialize `LogisticRegression` with above parameters
+
+10. **Train Model**
+
+* Fit model using training data (`X_train`, `y_train`)
+
+---
+
+### **Prediction**
+
+11. **Make Predictions**
+
+* Predict class labels for test data (`X_test`)
+* Store predictions in `y_pred`
+
+---
+
+### **Model Evaluation**
+
+12. **Calculate Accuracy**
+
+* Compute accuracy score
+
+13. **Generate Classification Report**
+
+* Display:
+
+  * Precision
+  * Recall
+  * F1-score
+
+14. **Compute Confusion Matrix**
+
+* Generate confusion matrix for predicted vs actual values
+* Display matrix
+
+15. **End**
+
+---
+
 
 ## Program:
 ```
